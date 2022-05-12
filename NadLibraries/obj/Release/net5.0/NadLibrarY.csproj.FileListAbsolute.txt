@@ -1,0 +1,11 @@
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/bin/Release/net5.0/NadLibrarY.deps.json
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/bin/Release/net5.0/NadLibrarY.dll
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/bin/Release/net5.0/ref/NadLibrarY.dll
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/bin/Release/net5.0/NadLibrarY.pdb
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.GeneratedMSBuildEditorConfig.editorconfig
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.AssemblyInfoInputs.cache
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.AssemblyInfo.cs
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.csproj.CoreCompileInputs.cache
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.dll
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/ref/NadLibrarY.dll
+/Users/donato_caff/Documents/Work/Projects/NAUSICAA/drone_app/DLL/NadLibraries/NadLibraries/obj/Release/net5.0/NadLibrarY.pdb
