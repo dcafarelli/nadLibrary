@@ -400,32 +400,32 @@ namespace NadLibrary
         }
 
 
-        public void NADPauseSearchAt() //OK
+/*        public void NADPauseSearchAt() //OK
         {
-            /* Mette in pausa il volo
+            *//* Mette in pausa il volo
             verso l'hotpoint
-             */
+             *//*
             string msg = "pause_hotpoint" + "\n\r";
             Send_tcp_msg(msg);
-        }
+        }*/
 
-        public void NADResumeSearchAt() //OK
+/*        public void NADResumeSearchAt() //OK
         {
-            /* Riprende il volo
+            *//* Riprende il volo
             verso l'hotpoint
-             */
+             *//*
             string msg = "resume_hotpoint" + "\n\r";
             Send_tcp_msg(msg);
-        }
+        }*/
 
-        public void NADStopSearchAt() //OK
+/*        public void NADStopSearchAt() //OK
         {
-            /* Ferma il volo
+            *//* Ferma il volo
             verso l'hotpoint
-             */
+             *//*
             string msg = "stop_hotpoint" + "\n\r";
             Send_tcp_msg(msg);
-        }
+        }*/
 
         /*
         public void NADSearchNext()
@@ -492,7 +492,7 @@ namespace NadLibrary
             Send_tcp_msg(msg);
         }
 
-        public void NADGoToShip(string latitude, string longitude, string altitude)
+/*        public void NADGoToShip(string latitude, string longitude, string altitude)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.Append("boat_coordinates").Append("-")
@@ -501,7 +501,7 @@ namespace NadLibrary
                 .Append(altitude).Append("\n\r");
 
             Send_tcp_msg(stringBuilder.ToString());
-        }
+        }*/
 
 
         //------------------- CALLS FROM SUPERVISOR SYSTEM -------------------
