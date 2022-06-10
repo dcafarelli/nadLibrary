@@ -258,7 +258,7 @@ namespace NadLibrary
             }*/
         }
 
-        public void NADSsetInterdictionArea(string area)
+        public void NADSetInterdictionArea(string area)
         {
             /* Setta il raggio dell'area di interdizione 
              * dalla ricerca di persone da parte del drone
@@ -268,7 +268,7 @@ namespace NadLibrary
         }
 
         
-        public void NADSsendWarning(string warning)
+        public void NADSendWarning(string warning)
         {
             /* Setta il raggio dell'area di interdizione 
              * dalla ricerca di persone da parte del drone
@@ -277,7 +277,7 @@ namespace NadLibrary
             Send_tcp_msg(msg);
         }
 
-        public void NADSsearchNextTarget()
+        public void NADSearchNextTarget()
         {
             /* Setta il raggio dell'area di interdizione 
              * dalla ricerca di persone da parte del drone
