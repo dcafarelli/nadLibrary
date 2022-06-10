@@ -258,6 +258,33 @@ namespace NadLibrary
             }*/
         }
 
+        public void NADSsetInterdictionArea(string area)
+        {
+            /* Setta il raggio dell'area di interdizione 
+             * dalla ricerca di persone da parte del drone
+             */
+            String msg = "interdiction_area" + "-" + area + "\n\r";
+            Send_tcp_msg(msg);
+        }
+
+        
+        public void NADSsendWarning(string warning)
+        {
+            /* Setta il raggio dell'area di interdizione 
+             * dalla ricerca di persone da parte del drone
+             */
+            String msg = "warning" + "-" + warning + "\n\r";
+            Send_tcp_msg(msg);
+        }
+
+        public void NADSsearchNextTarget()
+        {
+            /* Setta il raggio dell'area di interdizione 
+             * dalla ricerca di persone da parte del drone
+             */
+            String msg = "next_target\n\r";
+            Send_tcp_msg(msg);
+        }
 
         //------------------- MISSION REGION -------------------
 
@@ -290,7 +317,7 @@ namespace NadLibrary
                     Send_tcp_msg(c);
 
                 }
-                string msg = "start_waypoint_list" + "\n\r";
+                string msg = "start_waypoint_list\n\r";
                 Send_tcp_msg(msg);
             }
 
