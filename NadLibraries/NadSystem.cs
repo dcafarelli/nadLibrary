@@ -122,25 +122,34 @@ namespace NadLibrary
                 {
                     string msg = "Drone disconnected";
                     System.Diagnostics.Trace.WriteLine(msg);
-                    var first = dic.First();
-                    string ip = first.Key;
-                    //dic[ip].Shutdown(SocketShutdown.Both); //Cannot access a disposed object
-                    dic[ip].Close();
+                    if (dic != null && dic.Count > 0)
+                    {
+                        var first = dic.First();
+                        string ip = first.Key;
+                        //dic[ip].Shutdown(SocketShutdown.Both); //Cannot access a disposed object
+                        dic[ip].Close();
+                    }
                 }      
             }                
         }
 
-        public void Send_tcp_msg(string msg)
+        public string Send_tcp_msg(string msg)
         {
             //string ip = lstboxIP.SelectedValue.ToString(); modificare e farlo inserire poi l'ip
             byte[] rsp = Encoding.Default.GetBytes(msg);
 
+            if (dic == null || dic.Count == 0)
+            {
+                System.Diagnostics.Trace.WriteLine("There is no client connected");
+                return "There is no client connected";
+            }
             var first = dic.First();
             string ip = first.Key;
             //string ip = _remoteIp[0];
             try
             {
                 dic[ip].Send(rsp, 0);
+                return "Message sent";
             } catch (SocketException se)
             {
                 System.Diagnostics.Trace.WriteLine("SocketException : {0}", se.ToString());
@@ -151,7 +160,10 @@ namespace NadLibrary
                     dic[ip].Shutdown(SocketShutdown.Both);
                     dic[ip].Close();
                     dic.Remove(ip);
+                    return err;
                 }
+                else
+                    return se.ToString();
             }
 
         }
@@ -159,6 +171,11 @@ namespace NadLibrary
 
         public void NADCloseConnection()
         {
+            if (dic == null || dic.Count == 0)
+            {
+                closeServer();
+                return;
+            }
             var first = dic.First();
             string ip = first.Key;
             //string ip = _remoteIp[0];
@@ -178,17 +195,19 @@ namespace NadLibrary
                 finally
                 {
                     dic[ip].Close();
-                    if (tcpServer!= null)
-                    {
-                        tcpServer.Close();
-                    }
-                    
-                    System.Diagnostics.Trace.WriteLine("TCP Server closed");
+                    closeServer();
                 }
             }
-            else if (tcpServer!=null)
+            else
+                closeServer();
+        }
+
+        private void closeServer()
+        {
+            if (tcpServer != null)
             {
                 tcpServer.Close();
+                System.Diagnostics.Trace.WriteLine("TCP Server closed");
             }
         }
 
