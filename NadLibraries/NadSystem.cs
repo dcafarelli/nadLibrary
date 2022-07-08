@@ -343,34 +343,34 @@ namespace NadLibrary
         }
 
         
-        private void NADSendCoordinate(string latitude, string longitude, string altitude) //OK
-        {
-            /* Invia coordinate gps al drone per la ricerca 
-             * invocare più volte se si vuole creare una lista di coordinate 
-             */
+        //private void NADSendCoordinate(string latitude, string longitude, string altitude) //OK
+        //{
+        //    /* Invia coordinate gps al drone per la ricerca 
+        //     * invocare più volte se si vuole creare una lista di coordinate 
+        //     */
              
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append("waypoint_coordinates").Append("-")
-                .Append(latitude).Append("-")
-                .Append(longitude).Append("-")
-                .Append(altitude).Append("\n\r");
+        //    StringBuilder stringBuilder = new StringBuilder();
+        //    stringBuilder.Append("waypoint_coordinates").Append("-")
+        //        .Append(latitude).Append("-")
+        //        .Append(longitude).Append("-")
+        //        .Append(altitude).Append("\n\r");
 
-            Send_tcp_msg(stringBuilder.ToString());
+        //    Send_tcp_msg(stringBuilder.ToString());
 
-            //TODO: inserire controllo se latitude empty or ecc
-        }
+        //    //TODO: inserire controllo se latitude empty or ecc
+        //}
         
 
         
-        private void NADUploadMobMission() //OK
-        {
-            /*carica e prepare il drone per il volo
-             * verso le diverse coordinate
-             */
+        //private void NADUploadMobMission() //OK
+        //{
+        //    /*carica e prepare il drone per il volo
+        //     * verso le diverse coordinate
+        //     */
              
-            string msg = "upload_waypoint"+"\n\r";
-            Send_tcp_msg(msg);
-        }
+        //    string msg = "upload_waypoint"+"\n\r";
+        //    Send_tcp_msg(msg);
+        //}
         
 
         public void NADStartMobMission() //OK
@@ -379,8 +379,8 @@ namespace NadLibrary
             verso le coordinate precedentemente caricata
              */
             NADSendListCoord();
-            string msg = "start_waypoint"+"\n\r";
-            Send_tcp_msg(msg);
+            //string msg = "start_waypoint"+"\n\r";
+            //Send_tcp_msg(msg);
          
             //event_msg='start_waypoint'
 
