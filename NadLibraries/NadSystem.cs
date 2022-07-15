@@ -423,6 +423,7 @@ namespace NadLibrary
        
          public void NADDelPos()
          {
+            _coord = new List<string>();
             string msg = "del_pos" + "\n\r";
             Send_tcp_msg(msg);
             //event_msg='del_pos'
