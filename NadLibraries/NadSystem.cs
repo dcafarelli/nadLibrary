@@ -373,7 +373,7 @@ namespace NadLibrary
         //}
         
 
-        public void NADStartMobMission() //OK
+        public void NADUploadAndStartWaypointMission() //OK
         {
             /* Iinizia il volo
             verso le coordinate precedentemente caricata
@@ -386,12 +386,18 @@ namespace NadLibrary
 
         }
 
+        public void NADStartWaypointMission()
+        {
+            string msg = "start_waypoint"+"\n\r";
+            Send_tcp_msg(msg);
+        }
+
         public void NADPauseMobMission() //OK
         {
             /* Mette in pausa il volo
             verso le coordinate precedentemente caricata
              */
-            string msg = "pause_waypoint" + "\n\r";
+            string msg = "pause_mission" + "\n\r";
             Send_tcp_msg(msg);
 
             //event_msg='pause_waypoint'
@@ -402,7 +408,7 @@ namespace NadLibrary
             /* Mette in pausa il volo
             verso le coordinate precedentemente caricata
              */
-            string msg = "resume_waypoint" + "\n\r";
+            string msg = "resume_mission" + "\n\r";
             Send_tcp_msg(msg);
 
             //event_msg='resume_waypoint'
@@ -413,7 +419,7 @@ namespace NadLibrary
             /* Stoppa il volo
             verso le coordinate precedentemente caricata
              */
-            string msg = "stop_waypoint" + "\n\r";
+            string msg = "stop_mission" + "\n\r";
             Send_tcp_msg(msg);
 
             //event_msg='stop_waypoint'
