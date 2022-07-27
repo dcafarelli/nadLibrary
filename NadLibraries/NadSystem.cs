@@ -336,6 +336,9 @@ namespace NadLibrary
                     Send_tcp_msg(c);
 
                 }
+                //reset local list
+                _coord = new List<string>();
+
                 string msg = "start_waypoint_list\n\r";
                 Send_tcp_msg(msg);
             }
