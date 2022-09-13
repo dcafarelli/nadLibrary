@@ -241,18 +241,7 @@ namespace NadLibrary
 
             return networkDateTime;
         }
-        /* 
-        public DateTime NADGetTime()
-        {
-
-            restituisce data interna del drone
-             
-
-            //event_msg='get_time'
-
-            return new DateTime(1900, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-        }
-        */
+ 
 
         public void NADSetSpeed(string speed) //OK
         {
@@ -289,8 +278,7 @@ namespace NadLibrary
         
         public void NADSendWarning(string warning)
         {
-            /* Setta il raggio dell'area di interdizione 
-             * dalla ricerca di persone da parte del drone
+            /* Invia il msg passato in input al drone
              */
             String msg = "warning" + "-" + warning + "\n\r";
             Send_tcp_msg(msg);
@@ -298,8 +286,8 @@ namespace NadLibrary
 
         public void NADSearchNextTarget()
         {
-            /* Setta il raggio dell'area di interdizione 
-             * dalla ricerca di persone da parte del drone
+            /* Stoppa l'esecuzione attuale della HotpointMission
+             * e riprende l'esecuzione della precedente WaypointMission
              */
             String msg = "next_target\n\r";
             Send_tcp_msg(msg);
@@ -397,8 +385,7 @@ namespace NadLibrary
 
         public void NADPauseMobMission() //OK
         {
-            /* Mette in pausa il volo
-            verso le coordinate precedentemente caricata
+            /* Mette in pausa l'attuale missione in corso
              */
             string msg = "pause_mission" + "\n\r";
             Send_tcp_msg(msg);
@@ -408,8 +395,7 @@ namespace NadLibrary
 
         public void NADResumeMobMission() //OK
         {
-            /* Mette in pausa il volo
-            verso le coordinate precedentemente caricata
+            /* Riprende l'esecuzione della missione in pausa
              */
             string msg = "resume_mission" + "\n\r";
             Send_tcp_msg(msg);
@@ -419,8 +405,7 @@ namespace NadLibrary
 
         public void NADStopMobMission() //OK
         {
-            /* Stoppa il volo
-            verso le coordinate precedentemente caricata
+            /* Stoppa l'esecuzione della missione in corso
              */
             string msg = "stop_mission" + "\n\r";
             Send_tcp_msg(msg);
@@ -455,33 +440,47 @@ namespace NadLibrary
             Send_tcp_msg(stringBuilder.ToString());
         }
 
-
-/*        public void NADPauseSearchAt() //OK
+        public void NADGoToShip(string latitude, string longitude, string altitude)
         {
-            *//* Mette in pausa il volo
-            verso l'hotpoint
-             *//*
-            string msg = "pause_hotpoint" + "\n\r";
-            Send_tcp_msg(msg);
-        }*/
+            /*
+            Manda il drone alle coordinate specificate
+            */
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.Append("go_to_ship").Append("-")
+                .Append(latitude).Append("-")
+                .Append(longitude).Append("-")
+                .Append(altitude).Append("\n\r");
 
-/*        public void NADResumeSearchAt() //OK
-        {
-            *//* Riprende il volo
-            verso l'hotpoint
-             *//*
-            string msg = "resume_hotpoint" + "\n\r";
-            Send_tcp_msg(msg);
-        }*/
+            Send_tcp_msg(stringBuilder.ToString());
+        }
 
-/*        public void NADStopSearchAt() //OK
-        {
-            *//* Ferma il volo
-            verso l'hotpoint
-             *//*
-            string msg = "stop_hotpoint" + "\n\r";
-            Send_tcp_msg(msg);
-        }*/
+
+        /*        public void NADPauseSearchAt() //OK
+                {
+                    *//* Mette in pausa il volo
+                    verso l'hotpoint
+                     *//*
+                    string msg = "pause_hotpoint" + "\n\r";
+                    Send_tcp_msg(msg);
+                }*/
+
+        /*        public void NADResumeSearchAt() //OK
+                {
+                    *//* Riprende il volo
+                    verso l'hotpoint
+                     *//*
+                    string msg = "resume_hotpoint" + "\n\r";
+                    Send_tcp_msg(msg);
+                }*/
+
+        /*        public void NADStopSearchAt() //OK
+                {
+                    *//* Ferma il volo
+                    verso l'hotpoint
+                     *//*
+                    string msg = "stop_hotpoint" + "\n\r";
+                    Send_tcp_msg(msg);
+                }*/
 
         /*
         public void NADSearchNext()
